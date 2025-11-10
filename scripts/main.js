@@ -11,7 +11,7 @@
     } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js";
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
 
-    // ✅ Tu configuración de Firebase
+    // ✅ Configuración de Firebase
     const firebaseConfig = {
     apiKey: "AIzaSyDbUJlICVukU2TWOWTr69Tt_yZd-MV7Gr8",
     authDomain: "un-lugar-web.firebaseapp.com",
@@ -172,9 +172,9 @@
         const links = { ...data, ...JSON.parse(localStorage.getItem("rrssLinks") || "{}") };
 
         const icons = {
-            instagram: "📸",
-            facebook: "📘",
-            github: "💻",
+            instagram: "📱",
+            facebook: "💻",
+            github: "👨‍💻",
         };
 
         Object.keys(links).forEach((key) => {

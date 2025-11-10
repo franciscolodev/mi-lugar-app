@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Un Lugar</title>
+    <title>Mi Lugar</title>
     <!-- Carga Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -96,15 +96,15 @@
     <div id="app" class="max-w-7xl mx-auto space-y-6">
 
         <!-- Encabezado Fijo y Estado de Autenticación -->
-        <header class="mb-6 p-4 bg-white rounded-xl shadow-lg sticky top-0 z-10 flex flex-col sm:flex-row sm:items-center justify-between">
+        <header class="mb-6 p-4 bg-black rounded-xl shadow-lg sticky top-0 z-10 flex flex-col sm:flex-row sm:items-center justify-between">
             <img id="userPhoto" src="" alt="" class="w-8 h-8 rounded-full border border-gray-300 hidden">
 
             <div class="flex items-center space-x-2">
                 <!-- Título Editable -->
-                <h1 id="customTitle" contenteditable="true" class="text-3xl font-extrabold text-gray-800">
-                    Un Lugar
+                <h1 id="customTitle" contenteditable="true" class="text-3xl font-extrabold text-gray-400">
+                    Mi Lugar
                 </h1>
-                <svg id="editIcon" class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
+                <svg id="editIcon" class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
             </div>
             
             <!-- Badge de Estado de Sesión (Importante para Firebase) -->
@@ -258,7 +258,7 @@
                     <h2 class="text-xl font-semibold mb-4 text-accent border-b border-gray-200 pb-2">🗒️ Notas Rápidas (Diario)</h2>
                     <textarea id="quickNotes" rows="10" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent transition duration-150 ease-in-out resize-none" placeholder="Escribe tus ideas, resúmenes o recordatorios mentales aquí. Se guarda automáticamente al editar..."></textarea>
                     <button onclick="window.app.saveNotes()" class="mt-3 w-full btn-primary hover:opacity-90 font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out shadow-md">
-                        Guardar Notas en la Nube
+                        Guardar Notas
                     </button>
                 </div>
 
