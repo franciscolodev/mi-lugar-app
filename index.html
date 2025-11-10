@@ -1,47 +1,42 @@
     <!DOCTYPE html>
     <html lang="es" class="dark">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Un Lugar - Login</title>
-        <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Un Lugar - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     </head>
 
-    <body class="bg-gray-900 text-white flex items-center justify-center min-h-screen">
-        <div class="bg-gray-800 p-8 rounded-2xl shadow-lg text-center max-w-sm w-full">
-        <h1 class="text-3xl font-bold mb-6">✨ Bienvenido a Un Lugar</h1>
-        <p class="text-gray-400 mb-8">
-            Iniciá sesión con tu cuenta de Google para acceder a tus notas, recordatorios y
-            personalización.
+    <body class="bg-gray-900 text-white flex items-center justify-center min-h-screen p-4">
+    <div class="bg-gray-800 p-6 sm:p-8 rounded-2xl shadow-lg text-center max-w-sm w-full sm:w-[400px]">
+        <h1 class="text-2xl sm:text-3xl font-bold mb-6">✨ Bienvenido a <span class="text-blue-400">Un Lugar</span></h1>
+        <p class="text-gray-400 mb-8 text-sm sm:text-base">
+        Iniciá sesión con tu cuenta de Google para acceder a tus notas, recordatorios y personalización.
         </p>
         <button
-            id="google-login"
-            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition"
+        id="google-login"
+        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition"
         >
-            <img
+        <img
             src="https://www.svgrepo.com/show/475656/google-color.svg"
-            class="w-5 h-5"
+            class="w-5 h-5 sm:w-6 sm:h-6"
             alt="Google"
-            />
-            Iniciar sesión con Google
+        />
+        <span class="text-sm sm:text-base">Iniciar sesión con Google</span>
         </button>
-        </div>
+    </div>
 
-        <script type="module">
+    <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
-        import {
-            getAuth,
-            GoogleAuthProvider,
-            signInWithPopup,
-        } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js";
+        import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js";
 
         const firebaseConfig = {
-            apiKey: "AIzaSyDbUJlICVukU2TWOWTr69Tt_yZd-MV7Gr8",
-            authDomain: "un-lugar-web.firebaseapp.com",
-            projectId: "un-lugar-web",
-            storageBucket: "un-lugar-web.firebasestorage.app",
-            messagingSenderId: "687859092635",
-            appId: "1:687859092635:web:e43d6525a52348fc6e0a3e",
+        apiKey: "AIzaSyDbUJlICVukU2TWOWTr69Tt_yZd-MV7Gr8",
+        authDomain: "un-lugar-web.firebaseapp.com",
+        projectId: "un-lugar-web",
+        storageBucket: "un-lugar-web.firebasestorage.app",
+        messagingSenderId: "687859092635",
+        appId: "1:687859092635:web:e43d6525a52348fc6e0a3e",
         };
 
         const app = initializeApp(firebaseConfig);
@@ -51,16 +46,15 @@
         const loginBtn = document.getElementById("google-login");
 
         loginBtn.addEventListener("click", async () => {
-            try {
+        try {
             const result = await signInWithPopup(auth, provider);
-            const user = result.user;
-            console.log("✅ Usuario logueado:", user.displayName);
+            console.log("✅ Usuario logueado:", result.user.displayName);
             window.location.href = "/index_app.html";
-            } catch (error) {
+        } catch (error) {
             console.error("❌ Error al iniciar sesión:", error);
             alert("Hubo un problema al iniciar sesión. Intentá nuevamente.");
-            }
+        }
         });
-        </script>
+    </script>
     </body>
     </html>
