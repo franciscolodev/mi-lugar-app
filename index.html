@@ -1,0 +1,66 @@
+    <!DOCTYPE html>
+    <html lang="es" class="dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Un Lugar - Login</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+    <body class="bg-gray-900 text-white flex items-center justify-center min-h-screen">
+        <div class="bg-gray-800 p-8 rounded-2xl shadow-lg text-center max-w-sm w-full">
+        <h1 class="text-3xl font-bold mb-6">✨ Bienvenido a Un Lugar</h1>
+        <p class="text-gray-400 mb-8">
+            Iniciá sesión con tu cuenta de Google para acceder a tus notas, recordatorios y
+            personalización.
+        </p>
+        <button
+            id="google-login"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2 transition"
+        >
+            <img
+            src="https://www.svgrepo.com/show/475656/google-color.svg"
+            class="w-5 h-5"
+            alt="Google"
+            />
+            Iniciar sesión con Google
+        </button>
+        </div>
+
+        <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
+        import {
+            getAuth,
+            GoogleAuthProvider,
+            signInWithPopup,
+        } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDbUJlICVukU2TWOWTr69Tt_yZd-MV7Gr8",
+            authDomain: "un-lugar-web.firebaseapp.com",
+            projectId: "un-lugar-web",
+            storageBucket: "un-lugar-web.firebasestorage.app",
+            messagingSenderId: "687859092635",
+            appId: "1:687859092635:web:e43d6525a52348fc6e0a3e",
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const provider = new GoogleAuthProvider();
+
+        const loginBtn = document.getElementById("google-login");
+
+        loginBtn.addEventListener("click", async () => {
+            try {
+            const result = await signInWithPopup(auth, provider);
+            const user = result.user;
+            console.log("✅ Usuario logueado:", user.displayName);
+            window.location.href = "/index_app.html";
+            } catch (error) {
+            console.error("❌ Error al iniciar sesión:", error);
+            alert("Hubo un problema al iniciar sesión. Intentá nuevamente.");
+            }
+        });
+        </script>
+    </body>
+    </html>

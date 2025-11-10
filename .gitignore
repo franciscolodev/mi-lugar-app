@@ -1,0 +1,19 @@
+# Archivos y carpetas que NO se suben a GitHub
+
+# Dependencias
+node_modules/
+package-lock.json
+
+# Archivos temporales y logs
+dist/
+.env
+.DS_Store
+*.log
+
+# Configuración de Vercel o IDEs
+.vercel/
+.vscode/
+.idea/
+
+# Archivos del sistema
+Thumbs.db

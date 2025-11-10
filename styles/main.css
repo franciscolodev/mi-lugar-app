@@ -1,0 +1,8 @@
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    /* Fondo oscuro opcional */
+    html.dark {
+    background-color: #111827;
+    }

@@ -1,0 +1,19 @@
+{
+    "name": "mi-lugar-app",
+    "version": "1.0.0",
+    "description": "Notas, recordatorios y buscador de YouTube con login Google",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "firebase": "^10.14.1"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.15",
+        "postcss": "^8.4.27",
+        "tailwindcss": "^3.3.2",
+        "vite": "^4.5.0"
+    }
+}
