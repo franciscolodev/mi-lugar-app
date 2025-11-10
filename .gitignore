@@ -1,8 +1,10 @@
 # Archivos y carpetas que NO se suben a GitHub
 
 # Dependencias
-#node_modules/
-#package-lock.json
+node_modules/
+# 👇 Importante: NO ignorar package-lock.json
+# (Este archivo se sube para builds consistentes en Vercel)
+# package-lock.json
 
 # Archivos temporales y logs
 dist/
