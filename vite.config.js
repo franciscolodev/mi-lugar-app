@@ -1,7 +1,15 @@
-    const { defineConfig } = require("vite");
+    import { defineConfig } from "vite";
 
-    module.exports = defineConfig({
+    export default defineConfig({
     server: {
         port: 4321,
+    },
+    build: {
+        rollupOptions: {
+        input: {
+            main: "./index.html",
+            app: "./index_app.html",
+        },
+        },
     },
     });
